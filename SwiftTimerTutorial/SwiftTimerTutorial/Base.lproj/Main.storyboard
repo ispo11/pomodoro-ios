@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F2009" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftTimerTutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojD-9G-npa">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="play" id="Opd-7b-IEK">
+                                        <connections>
+                                            <action selector="startButton:" destination="BYZ-38-t0r" id="KHW-c2-6ZA"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Piz-qc-5GS"/>
+                                    <barButtonItem systemItem="pause" id="UYR-Nb-hO4">
+                                        <connections>
+                                            <action selector="pauseButton:" destination="BYZ-38-t0r" id="c24-P3-C5l"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTE-Q7-gBX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Swift Timer" id="dl3-Ql-DjS">
+                                        <barButtonItem key="rightBarButtonItem" title="Clear" id="dTX-dO-ukf">
+                                            <connections>
+                                                <action selector="clearButton:" destination="BYZ-38-t0r" id="eKu-ym-ZtJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ma-Sc-yAa">
+                                <rect key="frame" x="295" y="289" width="11" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DcS-ef-u1X">
+                                <rect key="frame" x="270" y="343" width="63" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="27i-x2-AXw"/>
+                                    <constraint firstAttribute="height" constant="30" id="L9f-Wj-RwY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="pressRoundedButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OTD-ae-byE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DcS-ef-u1X" firstAttribute="top" secondItem="8Ma-Sc-yAa" secondAttribute="bottom" constant="33" id="0S8-i4-AAW"/>
+                            <constraint firstItem="UTE-Q7-gBX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="53k-W3-mly"/>
+                            <constraint firstItem="UTE-Q7-gBX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Jod-4b-va8"/>
+                            <constraint firstItem="8Ma-Sc-yAa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P8e-Cb-qBc"/>
+                            <constraint firstItem="ojD-9G-npa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="T7I-wT-9GA"/>
+                            <constraint firstItem="DcS-ef-u1X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="TVN-bm-qW0"/>
+                            <constraint firstAttribute="trailing" secondItem="UTE-Q7-gBX" secondAttribute="trailing" id="b22-0J-f6h"/>
+                            <constraint firstAttribute="trailing" secondItem="ojD-9G-npa" secondAttribute="trailing" id="dz3-mi-Af7"/>
+                            <constraint firstItem="8Ma-Sc-yAa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="f5q-ac-nCs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ojD-9G-npa" secondAttribute="bottom" id="zSP-sv-S0X"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="countingLabel" destination="8Ma-Sc-yAa" id="ffS-DT-ehc"/>
+                        <outlet property="roundedButton" destination="DcS-ef-u1X" id="dBW-q3-8UL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="463"/>
+        </scene>
+    </scenes>
+</document>
