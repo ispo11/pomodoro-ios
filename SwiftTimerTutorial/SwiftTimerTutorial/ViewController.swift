@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var roundedButton: UIButton!
     
     @IBAction func startButton(sender: AnyObject) {
-        SwiftTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+        SwiftTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: #selector(ViewController.updateCounter), userInfo: nil, repeats: true)
 
     }
     
@@ -75,12 +75,13 @@ class ViewController: UIViewController {
             countingLabel.text = "Done"
             stopTimer()
         } else {
-        countingLabel.text = String(SwiftCounter--)
+        SwiftCounter -= 1
+        countingLabel.text = String(SwiftCounter)
         }
     }
     
     func startTimer() {
-        SwiftTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+        SwiftTimer = NSTimer.scheduledTimerWithTimeInterval(1, target:self, selector: #selector(ViewController.updateCounter), userInfo: nil, repeats: true)
         
         //change button to say pause
         roundedButton.setTitle("Pause", forState: .Normal)
